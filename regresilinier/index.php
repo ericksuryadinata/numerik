@@ -36,14 +36,19 @@
 		<div class="container-fluid">
 			<canvas id="regresiLinierSederhana"></canvas>
 			<div class="container-fluid">
-				<p id="rumusRegresi">A</p>
+				<p id="rumusRegresi"></p>
 			</div>
 		</div>
-		<canvas id="interpolasiNewton"></canvas>	
+		<div class="container-fluid">
+			<canvas id="interpolasiNewton"></canvas>
+			<div class="container-fluid">
+				<p id="rumusNewton"></p>
+			</div>
+		</div>
 	</div>
 
 </body>
 <script type="text/javascript" src="js/dist/jquery.min.js"></script>
-<script type="text/javascript" src="js/dist/Chart.bundle.min.js"></script>
+<script type="text/javascript" src="js/dist/Chart.bundle.js"></script>
 <script type="text/javascript" src="js/dist/app.js"></script>
 </html>
