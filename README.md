@@ -1,8 +1,11 @@
 # numerik
 
 # konfigurasi
-masukkan ke web server kalian masing - masing, contoh kalau di windows, pindahkah ke htdocs.
-import numerik.sql ke database kalian.
-akses sesuai nama host kalian masing - masin, contoh kalau di windows, localhost/your_folder
+masukkan ke web server kalian masing - masing
+  #windows
+    1. Copykan ke htdocs
+    2. Import file sql ke database kalian
+    3. ganti url di app.js sesuai dengah PATH kalian
+    
 
 selamat menggunakan
