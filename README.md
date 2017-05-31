@@ -1,18 +1,16 @@
-# numerik
+# Numerik
 
-konfigurasi
+Konfigurasi
 -------------
-  ### windows ###
-    ```
+  ### Windows ###
     Copykan ke htdocs
     Import file sql ke database kalian
     ganti url di app.js sesuai dengah PATH kalian
-    ```
-  ### linux ###
-    ```
+    
+  ### Linux ###
     Copykan ke /var/www/htm
     Import file sql ke database kalian
     ganti url di app.js sesuai dengah PATH kalian
-    ```
+    
 
 selamat menggunakan
