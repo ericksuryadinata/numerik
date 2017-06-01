@@ -46,10 +46,6 @@
 		</div>
 		<div class="container-fluid">
 			<canvas id="interpolasiNewton"></canvas>
-			<canvas id="test"></canvas>
-			<div class="container-fluid">
-				<p id="rumusNewton"></p>
-			</div>
 		</div>
 	</div>
 
