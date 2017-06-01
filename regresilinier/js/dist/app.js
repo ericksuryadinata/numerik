@@ -16,9 +16,9 @@ $(document).ready(function () {
 			/* end variabel regresi linier */
 
 			/* variabel newton*/
-			var newton1=0,newton2=0,fx0=parseInt(data[0].y),fx1=parseInt(data[data.length/2].y),fx2=parseInt(data[data.length-1].y);
-			var x0=parseInt(data[0].x), x1=parseInt(data[data.length/2].x),x2=parseInt(data[data.length-1].x);
-			var lA1=[],lA2=[],lA3=[];
+			var newton1=0,newton2=0,nK1=0, nK2=0,fx0=parseInt(data[0].y),fx1=parseInt(data[1].y),fx2=parseInt(data[2].y);
+			var x0=parseInt(data[0].x), x1=parseInt(data[1].x),x2=parseInt(data[2].x);
+			var lA1=[],lA2=[],lA3=[],lAK1=[],lAK2=[];
 			/* end variabel newton */
 
 			/* Perhitungan data sebenarnya */
@@ -44,34 +44,6 @@ $(document).ready(function () {
 				hA.push(hasilAkhir);
 			}
 			/* End Perhitungan regresi linier biasa */
-
-			/* Perhitungan Interpolasi newton*/
-			for(i=0;i<data.length;i++){
-				b0=fx0;
-				b1=(fx2-fx0)/(x2-x0); //fx2 dan x2 ini merupakan pengganti dari x1
-				newton1=b0+(b1*(data[i].x-x0));
-				b2=(((fx2-fx1)/(x2-x1))-((fx1-fx0)/(x1-x0)))/(x2-x0);
-				newton2=newton1+(b2*(data[i].x-x0)*(data[i].x-x1));
-				lA1.push(newton1);
-				lA2.push(newton2);
-			}
-			/* end Perhitungan Interpolasi newton*/
-
-			//ALTERNATIVE MODE//
-			/* Perhitungan Interpolasi newton*/ 
-			/*for(i=0;i<data.length;i++){
-				b0=fx0;
-				b1=(fx2-fx0)/(x2-x0); //fx2 dan x2 ini merupakan pengganti dari x1
-				newton1=b0+(b1*(data[i].x-x0));
-				b2=(((fx2-fx1)/(x2-x1))-((fx1-fx0)/(x1-x0)))/(x2-x0);
-				newton2=newton1+(b2*(data[i].x-x0)*(data[i].x-x1));
-				lA1.push(newton1);
-				lA2.push(newton2);
-			}
-			/* end Perhitungan Interpolasi newton*/
-			
-			console.log(lA1);
-			console.log(lA2);
 			var configRegresi= {
 				type: 'line',
 				data: {
@@ -146,25 +118,6 @@ $(document).ready(function () {
 						
 
 					},{
-						label: 'Interpolasi newton orde 1',
-						fill: false,
-						lineTension: 0.1,
-						backgroundColor: 'rgba(66,244,128,0.75)',
-						borderColor: 'rgba(66,244,128,1)',
-						pointHoverBackgroundColor: 'rgba(66,244,128,1)',
-						pointHoverBorderColor: 'rgba(66,244,128,1)',
-						data: lA1
-					},{
-
-						label: 'Interpolasi newton orde 2',
-						fill: false,
-						lineTension: 1,
-						backgroundColor: 'rgba(241,244,66,0.75)',
-						borderColor: 'rgba(241,244,66,1)',
-						pointHoverBackgroundColor: 'rgba(241,244,66,1)',
-						pointHoverBorderColor: 'rgba(241,244,66,1)',
-						data: lA2
-					},{
 						label: 'Interpolasi newton orde 3',
 						fill: false,
 						cubicInterpolationMode: 'monotone',
@@ -212,7 +165,6 @@ $(document).ready(function () {
 			var ctxI = document.getElementById("interpolasiNewton").getContext("2d");
 			var cinGraph = new Chart(ctxI, configInterpolasi);
 			$("#rumusRegresi").text("f(x) = "+rumusA+" + "+rumusB+"x");
-			$("#rumusNewton").text("f(x) = "+b0+" + "+b1+"*(x-"+x0+") + "+b2+"*(x-"+x0+")*(x-"+x1+")");
 		},
 		error: function (data) {
 			console.log(data);

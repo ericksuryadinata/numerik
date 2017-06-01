@@ -6,7 +6,11 @@
 	<link rel="stylesheet" type="text/css" href="css/css/bootstrap.css">
 </head>
 <body>
-	<div class="col-md-6 table-responsive">
+	<div class="col-md-6">
+		<div class="container-fluid">
+			<p><a href="p5.html">SHOW p5 DRAWING</a></p>
+		</div>
+		<div class="container-fluid table-responsive">
 		<table class="table">
 			<thead>
 				<?php
@@ -31,6 +35,7 @@
 				?>
 			</tbody>
 		</table>
+		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="container-fluid">
@@ -41,6 +46,7 @@
 		</div>
 		<div class="container-fluid">
 			<canvas id="interpolasiNewton"></canvas>
+			<canvas id="test"></canvas>
 			<div class="container-fluid">
 				<p id="rumusNewton"></p>
 			</div>
