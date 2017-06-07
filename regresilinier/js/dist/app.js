@@ -1,6 +1,7 @@
 $(document).ready(function () {
 	$.ajax({
 		url:"http://localhost/numerik/regresilinier/api/api.php",
+		// untuk url bisa diganti sesuai dengan url yang ada di server masing - masing
 		method:"GET",
 		success:function(data){
 			console.log(data);

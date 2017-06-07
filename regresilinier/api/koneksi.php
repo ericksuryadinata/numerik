@@ -1,4 +1,5 @@
 <?php 
+// ganti sesuai dengan database kalian
 	$server = "localhost";
 	$user = "root";
 	$password = "root";
