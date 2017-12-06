@@ -1,8 +1,8 @@
 <?php 
 // ganti sesuai dengan database kalian
 	$server = "localhost";
-	$user = "root";
-	$password = "root";
+	$user = "admin";
+	$password = "proesd";
 	$database = "db_numerik";
 	$mysqli = new mysqli($server,$user,$password,$database);
 	if($mysqli->connect_error){
