@@ -14,6 +14,7 @@ $(document).ready(function () {
 			/* variabel regresi linier */
 			var hA = [];
 			var totalX=0, totalY=0, totalXY=0, totalXPangkat=0, banyakData=0, rumusB=0, rumusA=0, banyakData=data.length;
+			var rataX = 0, rataY = 0;
 			/* end variabel regresi linier */
 
 			/* variabel newton*/
@@ -37,8 +38,12 @@ $(document).ready(function () {
 				totalXY+=(parseInt(data[i].x)*parseInt(data[i].y));
 				totalXPangkat+=(Math.pow(data[i].x,2));
 			}
+			rataX = totalX / banyakData;
+			rataY = totalY / banyakData;
 			rumusB=(totalX*totalY-(banyakData*totalXY))/(Math.pow(totalX,2)-(banyakData*totalXPangkat));
 			rumusA=(totalY-(rumusB*totalX))/banyakData;
+			console.log("total X : "+totalX+" total Y : "+totalY+" total XY : "+totalXY+" total X pangkat : "+totalXPangkat);
+			console.log("rata X : "+rataX+" rata Y : "+rataY);
 
 			for(i=0;i<data.length;i++){
 				hasilAkhir=parseFloat(rumusA)+parseFloat((rumusB)*data[i].x);
